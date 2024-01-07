@@ -1,5 +1,5 @@
 {% set name = "sphinx-toggleprompt" %}
-{% set version = "0.2.0" %}
+{% set version = "0.5.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sphinx-toggleprompt-{{ version }}.tar.gz
-  sha256: ec2fa8ffd72cf681d1ef4b19bf1fce513d6c9b3a902165c1d04b44f79d9f4095
+  sha256: 5eb5925a53dcf242d1c6c839653775e3dc9fbecf985d997913b4eea8e185f888
 
 build:
   noarch: python
