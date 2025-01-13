@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sphinx-toggleprompt-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sphinx-toggleprompt-{{ version }}.tar.gz
   sha256: ec2fa8ffd72cf681d1ef4b19bf1fce513d6c9b3a902165c1d04b44f79d9f4095
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - jinja2 <3.1
-    - python >=3.6
+    - python >={{ python_min }}
     - sphinx >=1.8
 
 test:
@@ -30,6 +30,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/jurasofish/sphinx-toggleprompt
